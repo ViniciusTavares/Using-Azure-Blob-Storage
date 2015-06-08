@@ -24,3 +24,16 @@ Para utilizar o Blob Storage precisamos conhecer 4 conceitos:
 <li>Blobs:  É um arquivo de qualquer tipo e tamanho, podendo ser um “page blob” ou “block blob”, veja mais detalhes aqui. </li>
 <li>Formato da URL:  O endereço para download dos blobs possui este formato: http://<storage account>. blob.core.windows.net /<container>/<blob></li>
 </ul>
+
+<h2>Criando um container</h2>
+private readonly CloudStorageAccount _account; 
+private readonly CloudBlobClient _blobClient; 
+  
+public BlobStorageManager(string connectionStringName) 
+{ 
+  
+//Acessando a minha account 
+_account = CloudStorageAccount.Parse(ConfigurationManager.ConnectionStrings[connectionStringName].ConnectionString); 
+  
+_blobClient = _account.CreateCloudBlobClient(); 
+}
