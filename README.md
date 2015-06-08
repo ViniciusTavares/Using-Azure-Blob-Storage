@@ -26,14 +26,14 @@ Para utilizar o Blob Storage precisamos conhecer 4 conceitos:
 </ul>
 
 <h2>Criando um container</h2>
+
+<code>
 private readonly CloudStorageAccount _account; 
-private readonly CloudBlobClient _blobClient; 
-  
+private readonly CloudBlobClient _blobClient;
 public BlobStorageManager(string connectionStringName) 
-{ 
-  
+{
 //Acessando a minha account 
 _account = CloudStorageAccount.Parse(ConfigurationManager.ConnectionStrings[connectionStringName].ConnectionString); 
-  
 _blobClient = _account.CreateCloudBlobClient(); 
 }
+</code>
