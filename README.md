@@ -2,8 +2,6 @@ Um exemplo de como acessar o Azure Blob Storage.
 
 Possui métodos para fazer Upload, Download e deletar blobs. 
 
- *É necessário substituir “AccountName” e “AccountKey” pelo nome da sua conta e sua chave, respectivamente.
-
 <h2>Requesitos:</h2>
 Visual Studio 2012 + 
 Nuget Package
@@ -24,3 +22,14 @@ Para utilizar o Blob Storage precisamos conhecer 4 conceitos:
 <li>Blobs:  É um arquivo de qualquer tipo e tamanho, podendo ser um “page blob” ou “block blob”, veja mais detalhes aqui. </li>
 <li>Formato da URL:  O endereço para download dos blobs possui este formato: http://<storage account>. blob.core.windows.net /<container>/<blob></li>
 </ul>
+
+<h2>Observações</h2>
+
+Atualize os valores da Connection String do "StorageConnectionString" localizada no App.config, para acessar seu Blob Storage.
+
+```html
+<connectionStrings>
+     <add name="StorageConnectionString" 
+          connectionString="DefaultEndpointsProtocol=https;AccountName=ACCOUNTNAME;AccountKey=ACCOUNTKEY" />
+</connectionStrings>
+```
